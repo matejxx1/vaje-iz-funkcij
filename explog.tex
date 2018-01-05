@@ -5,7 +5,337 @@
 \section{Pregled snovi}
 \label{sec:exp-log-pregled-snovi}
 
-Pregled snovi.
+
+\begin{center}
+EKSPONENTNA FUNKCIJA
+\end{center}
+
+Eksponentna funkcija je preslikava $f: \mathbb{R} \longrightarrow \mathbb{R}^+$ oz. $f: x \longmapsto a^x \Leftrightarrow f(x) =~a^x$, pri čemer je $a > 0$ in $a \neq 1$, saj če bi bil $a=1$, bi dobili konstantno funkcijo	$f(x) = 1^x = 1$.
+\\
+
+\noindent Ločimo dva primera:
+\begin{enumerate}
+\item $a > 1$:
+%
+\begin{itemize}
+\item Definicijsko območje so vsa realna števila: $\mathcal{D}_f = \mathbb{R}$.
+\item Zaloga vrednosti so vsa pozitivna realna števila: $\mathcal{Z}_f = \mathbb{R}^+$.
+\item Abscisna os je vodoravna asimptota, saj se približuje $y = 0$, vendar se je nikoli ne dotakne, ko gre $x \rightarrow -\infty$.
+\item Začetna vrednost je pri vseh grafih enaka: $T(0,1)$, saj je $f(0) = a^0 = 1~\forall a$.
+\item Funkcija je naraščajoča: $x_1 < x_2 \Rightarrow f(x_1) < f(x_2)$
+\item Funkcija je injektivna: $x_1 \neq x_2 \Rightarrow f(x_1) \neq f(x_2)~\forall x_{1, 2} \in \mathbb{R}$.
+%
+\begin{figure}[h]
+\centering
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{aqaqaq}{rgb}{0.6274509803921569,0.6274509803921569,0.6274509803921569}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{ccqqqq}{rgb}{0.8,0.,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale=0.9]
+\draw[->,color=black] (-3.4954873277047307,0.) -- (4.196120979865234,0.);
+\foreach \x in {-3.,-2.,-1.,1.,2.,3.,4.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt);
+\draw[->,color=black] (0.,-1.237832632360699) -- (0.,4.56310100742669);
+\foreach \y in {-1.,1.,2.,3.,4.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
+\clip(-3.4954873277047307,-1.237832632360699) rectangle (4.196120979865234,4.56310100742669);
+\draw[line width=2.pt,color=ccqqqq,smooth,samples=100,domain=-3.4954873277047307:4.196120979865234] plot(\x,{2.0^((\x))});
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt,color=aqaqaq,domain=-3.4954873277047307:4.196120979865234] plot(\x,{(-0.-0.*\x)/1.});
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt,color=aqaqaq] (1.,0.)-- (1.,2.)-- (0.,2.);
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt,color=aqaqaq] (-1.,0.)-- (-1.,0.5)-- (0.,0.5);
+\begin{scriptsize}
+\draw [fill=qqwuqq] (0.,1.) circle (2.0pt);
+\draw[color=qqwuqq] (-0.498338280481239,1.1631093463290814) node {$T = (0, 1)$};
+\draw[color=aqaqaq] (-2.4427252967803503,-0.30860900302438576) node {$asimptota$};
+\draw [color=black] (1.,0.) circle (1.0pt);
+\draw[color=black] (0.9733800688722319,-0.14747195747473607) node {1};
+\draw [color=zzttqq] (1.,2.) circle (1.0pt);
+\draw [color=black] (0.,2.) circle (1.0pt);
+\draw[color=black] (-0.2082915984918688,2.0547343317038096) node {a};
+\draw [color=black] (0.,0.) circle (1.0pt);
+\draw[color=black] (-0.09012443175545873,-0.1367294877714261) node {0};
+\draw [color=black] (-1.,0.) circle (1.0pt);
+\draw[color=black] (-1.0462042353500494,-0.14747195747473607) node {-1};
+\draw [color=zzttqq] (-1.,0.5) circle (1.0pt);
+\draw [color=black] (0.,0.5) circle (1.0pt);
+\draw[color=black] (0.2966044775637015,0.46484881561393276) node {1/a};
+\end{scriptsize}
+\end{tikzpicture}
+\caption{Graf, ko $a>1$}
+\end{figure}
+\end{itemize}
+%
+\newpage
+\item $0 < a < 1$:
+\begin{itemize}
+\item $\mathcal{D}_f = \mathbb{R}$
+\item $\mathcal{Z}_f = \mathbb{R}^+$
+\item Abscisna os je vodoravna asimptota, saj se približuje $y = 0$, vendar se je nikoli ne dotakne, ko gre $x \rightarrow \infty$.
+\item Začetna vrednost: $T(0,1)$
+\item Funkcija je padajoča: $x_1 < x_2 \Rightarrow f(x_1) > f(x_2)$
+\item Funkcija je injektivna.
+%
+\begin{figure}[htb]
+\centering
+\definecolor{aqaqaq}{rgb}{0.6274509803921569,0.6274509803921569,0.6274509803921569}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{qqzzqq}{rgb}{0.,0.6,0.}
+\definecolor{ccqqqq}{rgb}{0.8,0.,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale=0.8]
+\draw[->,color=black] (-3.4398882747503903,0.) -- (4.784334733686732,0.);
+\foreach \x in {-3.,-2.,-1.,1.,2.,3.,4.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt);
+\draw[->,color=black] (0.,-1.7465646767819383) -- (0.,4.743220239093709);
+\foreach \y in {-1.,1.,2.,3.,4.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
+\clip(-3.4398882747503903,-1.7465646767819383) rectangle (4.784334733686732,4.743220239093709);
+\draw[line width=2.pt,color=ccqqqq,smooth,samples=100,domain=-3.4398882747503903:4.784334733686732] plot(\x,{(1.0/2.0)^((\x))});
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt,color=aqaqaq] (1.,0.)-- (1.,0.5)-- (0.,0.5);
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt,color=aqaqaq] (-1.,0.)-- (-1.,2.)-- (0.,2.);
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt,color=aqaqaq,domain=-3.4398882747503903:4.784334733686732] plot(\x,{(-0.-0.*\x)/1.});
+\begin{scriptsize}
+\draw [fill=qqzzqq] (0.,1.) circle (2.0pt);
+\draw[color=qqzzqq] (0.4310099848073055,1.1422510866565136) node {T(0,1)};
+\draw [color=black] (0.,0.) circle (1.0pt);
+\draw[color=black] (-0.1203345744175295,-0.17867858648631718) node {0};
+\draw [color=black] (1.,0.) circle (1.0pt);
+\draw[color=black] (0.9593818540644391,-0.19016493147016789) node {1};
+\draw [fill=zzttqq] (1.,0.5) circle (1.0pt);
+\draw [color=black] (0.,0.5) circle (1.0pt);
+\draw[color=black] (-0.2351980242560368,0.5679338374639785) node {a};
+\draw [color=black] (-1.,0.) circle (1.0pt);
+\draw[color=black] (-1.0392421731255876,-0.2016512764540186) node {-1};
+\draw [fill=zzttqq] (-1.,2.) circle (1.0pt);
+\draw [color=black] (0.,2.) circle (1.0pt);
+\draw[color=black] (0.2931738450010968,2.015213305429167) node {1/a};
+\draw[color=aqaqaq] (-2.1534176365591087,0.17739810801305458) node {asimptota};
+\end{scriptsize}
+\end{tikzpicture}
+\caption{Graf, ko $0<a<1$}
+\end{figure}
+\end{itemize}
+\end{enumerate}
+
+\begin{center}
+EKSPONENTNE ENAČBE
+\end{center}
+
+Eksponente enačbe so enačbe, ki imajo neznanke le v eksponentu. Najprej si osvežimo spomin, kako se računa s potencami:
+$x, z \in \mathbb{R}, a, b > 0, a, b \neq 1$:
+%
+\begin{multicols}{2}
+\begin{itemize}
+\item $a^x \cdot a^z = a^{x + z}$
+\item $a^x : a^z = a^{x - z}$
+\item $(a^x)^z$
+\item $a^x \cdot b^x = (a \cdot b)^x$
+\item $\frac{a^x}{b^x} = (\frac{a}{b})^x$
+\item $a^{-x} = \frac{1}{a^x}$
+\item $a^0 = 1, a\neq 0$
+\item$a^1 = a$
+\item $a^{\frac{p}{q}} = \sqrt [q]a^p$
+\item $(\sqrt[q]a^p)^n = \sqrt[q]{a^{np}}$
+\end{itemize}
+\end{multicols}
+
+Eksponentne enačbe ločimo v pet skupin:
+%
+\begin{enumerate}
+\item \textbf{osnovi potenc na obeh straneh enačbe sta enaki} oz. enačbo preuredimo tako, da imamo na obeh straneh enaki osnovi: $a^{f(x)} = a^{g(x)}$. Enačaj bo veljal le, če bosta eksponenta enaka: $f(x) = g(x)$.
+\item \textbf{potenci imata različni osnovi, vendar enak eksponent:} $a^{f(x)} =b^{f(x)}$. Enačaj bo v tem primeru veljal le, če bosta eksponenta enaka nič, saj grafa eksponentne funkcije z različnima osnovama potekata skozi eno skupno točko in sicer $T(0, 1) \Rightarrow f(x) = 0$ (glej \ref{fig: grafa}) ali:
+%
+\begin{equation*}
+\bigg(\frac{a}{b}\bigg)^{f(x)}=1 \Rightarrow \bigg(\frac{a}{b}\bigg)^{f(x)} = \bigg(\frac{a}{b}\bigg)^0 \text{po zgornji točki}\Rightarrow f(x) = 0.
+\end{equation*}
+%
+\begin{figure}[h]
+\centering
+\definecolor{ccqqqq}{rgb}{0.8,0.,0.}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale=0.8]
+\draw[->,color=black] (-4.394698325375187,0.) -- (4.496895020831907,0.);
+\foreach \x in {-4.,-3.,-2.,-1.,1.,2.,3.,4.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0.,-1.4455497947855014) -- (0.,5.570861155782946);
+\foreach \y in {-1.,1.,2.,3.,4.,5.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-4.394698325375187,-1.4455497947855014) rectangle (4.496895020831907,5.570861155782946);
+\draw[line width=2.pt,color=qqwuqq,smooth,samples=100,domain=-4.394698325375187:4.496895020831907] plot(\x,{2.0^((\x))});
+\draw[line width=2.pt,color=ccqqqq,smooth,samples=100,domain=-4.394698325375187:4.496895020831907] plot(\x,{(1.0/2.0)^((\x))});
+\begin{scriptsize}
+\draw [fill=black] (0.,1.) circle (2.0pt);
+\draw[color=black] (0.6223459649427827,1.0567631371428918) node {T(0,1)};
+\end{scriptsize}
+\end{tikzpicture}
+\caption{Grafa dveh eksponentnih funkcij}
+\label{fig: grafa}
+\end{figure}
+
+\item \textbf{neznanka v eksponentu potence je pomnožena z različnimi koeficienti:} $a^{bx + c}$. Enačbo poenostaviš tako, da vpelješ novo spremenljivko $u$, kjer bo eksponent najmanjši faktor ter računaš naprej kvadratno enačbo z $u$-ji.
+\item \textbf{enačbe, kjer nastopajo eksponentne in neeksponentne funkcije:} $a^{f(x)} = b$, kjer $b$ ni potenca števila $a$ ali $a^{f(x)} = x + c$. V takem primeru najprej narišemo grafa obeh funkcij, ki ju vsebuje enačba. Z grafa prebereš rešitve. 
+\item \textbf{enačbe, kjer nastopajo vsote ali razlike potenc z enakimi osnovami} rešujemo  z izpostavljanjem skupnega faktorja. Tako enačbo prevedemo na že znane eksponntne enačbe.
+\end{enumerate}
+
+\begin{center}
+EKSPONENTNE NEENAČBE
+\end{center}
+Eksponentne neenačbe so podobne eksponetnim enačbam, le da imajo vmes neenačaj. Rešitve neenačb so intervali, unije intervalov ali prazna množica. Prav tako kot pri eksponentnih enačbah lahko rešujemo neenačbe na različne načine:
+%
+\begin{enumerate}
+\item \textbf{osnovi potenc na obeh straneh neenačbe sta enaki in $a>1$} oz. neenačbo preuredimo tako, da imamo na obeh straneh enaki osnovi: $a^{x_1} > a^{x_2} \Rightarrow x_1 > x_2$.
+\item \textbf{potenci imata različni osnovi, vendar enak eksponent in $a>1$:} $a^x < b^x$. Delimo neenačbo s tisto potenco, ki ima manjšo osnovo.
+\item \textbf{osnovi potenc na obeh straneh enačbe sta enaki in $0<a<1$:}
+\\
+$a^{x_1}<a^{x_2} \Rightarrow x_1 > x_2$.
+\end{enumerate}
+
+\begin{center}
+LOGARITEMSKA FUNKCIJA
+\end{center}
+
+Ker je eksponentna funkcija  $f: x \mapsto a^x$ bijektivna, je obrnljiva, kar pa pomeni, da ima inverz $f^{-1}$. Njena inverzna funkcija je logaritemska funkcija z enako osnovo. Logaritemska funkcija z osnovo $a$, kjer je $a > 0$ in $a \neq 1$ je preslikava $f: x \mapsto \log_a{x}$, za vse $x > 0$. Torej velja:
+\begin{equation*}
+a^x=y \Leftrightarrow x=\log_a{y}
+\end{equation*}
+%
+Iz te definicije sledi tudi: 
+\begin{equation*}
+a^{\log_a{y}} = y \qquad \text{in} \qquad \log_a{a^x} = x
+\end{equation*}
+%
+Gaf logaritemske funkcije dobimo tako, da čez simetralo lihih kvadrantov $y=x$ prezrcalimo eksponentno funkcijo, saj je njen inverz. Tako kot pri eksponentni funkciji tudi tu ločimo dva preimera:
+\begin{enumerate}
+\item $a>1$:
+%
+\begin{itemize}
+\item  $\mathcal{D}_f = \mathbb{R}^+$
+\item $\mathcal{Z}_f = \mathbb{R}$
+\item Ordinatna os je navpična asimptota.
+\item Vsi grafi gredo skozi točko $T(1, 0)$, saj je ena ničla logaritma: $\log_a{1}=\log_a{a^0}
+=0$.
+\item Funkcija je naraščajoča: $x_1 < x_2 \Rightarrow f(x_1) < f(x_2)$
+\item Funkcija je neomejena: ko vrednosti spremenljivke $x$ naraščajo od $-\infty$ do $+\infty$, graf funkcije narašča od minus neskončno do neskončnosti, zato funkcija navzdol in navzgor ni omejena.
+\item Funkcija je pozitivna na intervalu $(1, \infty)$ in negativna na $(0, 1)$.
+%
+\begin{figure}[h]
+\centering
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{ccqqqq}{rgb}{0.8,0.,0.}
+\definecolor{aqaqaq}{rgb}{0.6274509803921569,0.6274509803921569,0.6274509803921569}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale=0.7]
+\draw[->,color=black] (-5.907272727272731,0.) -- (8.412727272727277,0.);
+\foreach \x in {-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.,5.,6.,7.,8.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt);
+\draw[->,color=black] (0.,-5.101818181818178) -- (0.,5.698181818181817);
+\foreach \y in {-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.,5.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
+\clip(-5.907272727272731,-5.101818181818178) rectangle (8.412727272727277,5.698181818181817);
+\draw[line width=2.pt,dash pattern=on 5pt off 5pt,color=aqaqaq,smooth,samples=100,domain=-5.907272727272731:8.412727272727277] plot(\x,{2.0^((\x))});
+\draw [line width=2.pt,dash pattern=on 5pt off 5pt,color=aqaqaq,domain=-5.907272727272731:8.412727272727277] plot(\x,{(-0.--1.*\x)/1.});
+\draw[line width=2.pt,color=ccqqqq,smooth,samples=1000,domain=0.01:100] plot(\x,{log2(\x)});
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt,color=aqaqaq] (0.,-5.101818181818178) -- (0.,5.698181818181817);
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt,color=aqaqaq] (0.,-1.)-- (0.4927272727272728,-1.0211387670581502)-- (0.4927272727272728,0.);
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt,color=aqaqaq] (0.,1.)-- (2.,1.)-- (2.,0.);
+\begin{scriptsize}
+\draw[color=aqaqaq] (-3.7072727272727297,0.5881818181818196) node {eksponentna};
+\draw [color=black] (0.,0.) circle (1.0pt);
+\draw[color=black] (-0.16727272727272757,-0.25181818181818) node {0};
+\draw[color=aqaqaq] (-3.107272727272729,-3.9118181818181785) node {y = x};
+\draw [fill=qqwuqq] (1.000000000020259,2.922742273521049E-11) circle (2.0pt);
+\draw[color=qqwuqq] (1.2527272727272731,-0.31181818181818) node {T(1, 0)};
+\draw[color=aqaqaq] (0.6327272727272728,5.408181818181817) node[below] {asimptota};
+\draw [fill=uuuuuu] (0.,-1.) circle (1.0pt);
+\draw[color=uuuuuu] (-0.3672727272727277,-0.9318181818181797) node {-1};
+\draw [fill=uuuuuu] (0.4927272727272728,0.) circle (1.0pt);
+\draw[color=uuuuuu] (0.4127272727272727,0.3481818181818197) node {1/a};
+\draw [fill=uuuuuu] (0.,1.) circle (1.0pt);
+\draw[color=uuuuuu] (-0.4072727272727277,1.1281818181818193) node {1};
+\draw [fill=uuuuuu] (2.,0.) circle (1.5pt);
+\draw[color=uuuuuu] (1.9727272727272736,-0.33181818181818) node {a};
+\end{scriptsize}
+\end{tikzpicture}
+\caption{Graf logaritma $a>1$}
+\end{figure}
+\end{itemize}
+
+\item $0 < a < 1$:
+%
+\begin{itemize}
+\item  $\mathcal{D}_f = \mathbb{R}^+$
+\item $\mathcal{Z}_f = \mathbb{R}$
+\item Ordinatna os je navpična asimptota.
+\item Vsi grafi gredo skozi točko $T(1, 0)$, saj je ena ničla logaritma: $\log_a{1}=0$.
+\item Funkcija je padajoča: $x_1 < x_2 \Rightarrow f(x_1) > f(x_2)$
+\item Funkcija je neomejena.
+\item Funkcija je negativna na intervalu $(1, \infty)$ in pozitivna na $(0, 1)$.
+%
+\begin{figure}[h!]
+\centering
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{ccqqqq}{rgb}{0.8,0.,0.}
+\definecolor{aqaqaq}{rgb}{0.6274509803921569,0.6274509803921569,0.6274509803921569}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-5.006149047230808,0.) -- (7.034935859421989,0.);
+\foreach \x in {-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.,5.,6.,7.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt);
+\draw[->,color=black] (0.,-4.164698738644652) -- (0.,5.336995356688894);
+\foreach \y in {-4.,-3.,-2.,-1.,1.,2.,3.,4.,5.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
+\clip(-5.006149047230808,-4.164698738644652) rectangle (7.034935859421989,5.336995356688894);
+\draw[line width=2.pt,dash pattern=on 4pt off 4pt,color=aqaqaq,smooth,samples=100,domain=-5.006149047230808:7.034935859421989] plot(\x,{(1.0/2.0)^((\x))});
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt,color=aqaqaq] (0.,-4.164698738644652) -- (0.,5.336995356688894);
+\draw [line width=2.pt,dash pattern=on 4pt off 4pt,color=aqaqaq,domain=-5.006149047230808:7.034935859421989] plot(\x,{(-0.--1.*\x)/1.});
+\draw[line width=2.pt,color=qqwuqq,smooth,samples=1000,domain=0.01:100] plot(\x,{ln((\x))/ln(0.5)});
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt,color=aqaqaq] (0.,1.)-- (0.4996206865294056,1.0010948826822181)-- (0.5098786753699146,0.);
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt,color=aqaqaq] (0.,-1.)-- (2.000001852694624,-1.0000013364360543)-- (2.,0.);
+\begin{scriptsize}
+\draw[color=aqaqaq] (-1.3231915129333742,4.2859230010104055) node {eksponentna};
+\draw [color=black] (0.,0.) circle (1.0pt);
+\draw[color=black] (-0.16280763226431988,-0.25470957552067003) node {0};
+\draw[color=aqaqaq] (0.6275987792059056,5.093146570171485) node {asimptota};
+\draw[color=aqaqaq] (-2.6517469705109873,-3.096809225275306) node {y=x};
+\draw [fill=qqwuqq] (1.,0.) circle (2.0pt);
+\draw[color=qqwuqq] (1.4852738214395544,0.6029654667129775) node {$T = (1, 0)$};
+\draw [fill=black] (0.,1.) circle (1.0pt);
+\draw[color=black] (-0.31416205148202264,1.0065772512935174) node {1};
+\draw [fill=black] (0.5098786753699146,0.) circle (1.0pt);
+\draw[color=black] (0.47624435998820286,-0.20425810244810255) node {a};
+\draw [fill=black] (0.,-1.) circle (1.0pt);
+\draw[color=black] (-0.2468934207185992,-0.9442130408457592) node {-1};
+\draw [fill=aqaqaq] (2.,0.) circle (1.0pt);
+\draw[color=black] (2.157960129073789,-0.2715267332115259) node[right] {1/a};
+\end{scriptsize}
+\end{tikzpicture}
+\end{figure}
+\end{itemize}
+\end{enumerate}
+
+\newpage
+Za računanje z logaritmi velja nekaj pravil:
+\begin{multicols}{2}
+\begin{itemize}
+\item $y=a^x \Rightarrow x=\log_a{y}$
+\item $\log_a{a^x} = x$
+\item $\log_a{a}=1$
+\item $\log_a{1}=0$
+\item$a^{\log_a{y}}=y$
+\item $\log_a{(x\cdot z)}=\log_a{x} + \log_a{z}$
+\item $\log_a{x^r}=r \cdot \log_a{x}; \qquad r \in \mathbb{R}$
+\item $\log_a{(\frac{x}{z})}=\log_a{x}-\log_a{z}$
+\item $\log_a{x}=\frac{\log_b{x}}{\log_b{a}}$
+\end{itemize}
+\end{multicols}
+
+V matematiki največ uporabljamo logaritma z osnovo 10, ki mu pravimo desetiški logaritem in logaritem z osnovo $e$, ki ga imenujemo naravni logaritem. Po dogovoru pišemo:
+%
+\begin{equation*}
+\log_{10}{x} = \log{x} \qquad \text{in} \qquad \log_e{x} = \ln x
+\end{equation*}
+
+Logaritemske enačbe in neenačbe rešujemo s pravili za logaritmiranje.
+
 
 \section{Vaje}
 \label{sec:exp-log-vaje}
